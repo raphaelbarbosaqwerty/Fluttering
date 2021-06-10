@@ -9,7 +9,7 @@ class UserStore = _UserStoreBase with _$UserStore;
 abstract class _UserStoreBase with Store {
   final UserService userService;
 
-  _UserStoreBase({this.userService});
+  _UserStoreBase({required this.userService});
 
   @observable
   String name = "";

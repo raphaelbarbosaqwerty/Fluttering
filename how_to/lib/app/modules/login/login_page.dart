@@ -4,7 +4,7 @@ import 'package:how_to/app/modules/login/login_store.dart';
 
 class LoginPage extends StatefulWidget {
   final String title;
-  const LoginPage({Key key, this.title = 'LoginPage'}) : super(key: key);
+  const LoginPage({Key? key, this.title = 'LoginPage'}) : super(key: key);
   @override
   LoginPageState createState() => LoginPageState();
 }

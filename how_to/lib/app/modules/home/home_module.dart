@@ -23,11 +23,13 @@ class HomeModule extends Module {
   final List<ModularRoute> routes = [
     // /home/
     // /home/user
+    // /home/user/kuringa
     ChildRoute(Modular.initialRoute, child: (_, args) => HomePage()),
     ChildRoute(
-      '/user/:name',
+      '/user/:name/:age/:id',
       child: (_, args) => UserPage(
         name: args.params['name'],
+        age: args.params['id'],
         userModel: args.data,
       ),
     ),
