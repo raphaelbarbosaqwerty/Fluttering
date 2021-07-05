@@ -3,7 +3,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:how_to/app/modules/home/model/user_model.dart';
 
 import 'home_store.dart';
-import 'home_store.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
