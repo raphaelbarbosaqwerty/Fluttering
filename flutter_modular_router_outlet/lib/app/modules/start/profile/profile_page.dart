@@ -3,8 +3,13 @@ import 'package:flutter_modular_router_outlet/app/modules/start/profile/profile_
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
+  final String? id;
   final String title;
-  const ProfilePage({Key? key, this.title = 'ProfilePage'}) : super(key: key);
+  const ProfilePage({
+    Key? key,
+    this.title = 'ProfilePage',
+    this.id,
+  }) : super(key: key);
   @override
   ProfilePageState createState() => ProfilePageState();
 }
@@ -17,7 +22,7 @@ class ProfilePageState extends State<ProfilePage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text('Hi! This is the ProfileModule inside StartModule'),
+        Text('Hi! This is the ProfileModule inside StartModule. The id is ${widget.id}'),
       ],
     );
   }

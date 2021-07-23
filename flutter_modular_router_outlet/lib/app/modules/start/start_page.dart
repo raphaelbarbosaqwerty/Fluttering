@@ -26,9 +26,9 @@ class StartPageState extends State<StartPage> {
             onTap: (id) {
               store.currentIndex = id;
               if (id == 0) {
-                Modular.to.navigate('/start/configuration');
+                Modular.to.navigate('/start/configuration/1');
               } else if (id == 1) {
-                Modular.to.navigate('/start/profile');
+                Modular.to.navigate('/start/profile/1');
               } else if (id == 2) {
                 Modular.to.navigate('/start/users');
               }

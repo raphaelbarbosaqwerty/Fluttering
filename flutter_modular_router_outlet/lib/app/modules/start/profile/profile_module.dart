@@ -1,16 +1,19 @@
-import 'package:flutter_modular_router_outlet/app/modules/start/profile/profile_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'profile_page.dart';
+import 'profile_store.dart';
 
 class ProfileModule extends Module {
   @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => ProfileStore()),
+    /**
+     * When we pass the arguments, the Store is not found. And we need to initialize the store inside the StartModule (BUG)
+     */
+    // Bind.singleton((i) => ProfileStore()),
   ];
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute('/', child: (_, args) => ProfilePage()),
+    ChildRoute('/:id', child: (_, args) => ProfilePage(id: args.params['id'])),
   ];
 }

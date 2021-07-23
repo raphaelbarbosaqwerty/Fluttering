@@ -24,7 +24,7 @@ class LoginPageState extends State<LoginPage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                Modular.to.navigate('/start/configuration');
+                Modular.to.navigate('/start/configuration/1');
               },
               child: Text('Enter'),
             ),

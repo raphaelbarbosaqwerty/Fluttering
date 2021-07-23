@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ConfigurationPage extends StatefulWidget {
-  ConfigurationPage({Key? key}) : super(key: key);
+  final String? id;
+  ConfigurationPage({
+    Key? key,
+    this.id,
+  }) : super(key: key);
 
   @override
   _ConfigurationPageState createState() => _ConfigurationPageState();
@@ -13,7 +17,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Hi! ConfigurationPage inside StartModule'),
+        Text('Hi! ConfigurationPage inside StartModule. The ID is: ${widget.id}'),
       ],
     );
   }
