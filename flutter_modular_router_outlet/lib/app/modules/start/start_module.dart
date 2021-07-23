@@ -13,7 +13,7 @@ class StartModule extends Module {
     /**
      * Using this way the problem not occurs.
      */
-    // Bind.singleton((i) => ProfileStore()),
+    Bind.singleton((i) => ProfileStore()),
   ];
 
   @override
