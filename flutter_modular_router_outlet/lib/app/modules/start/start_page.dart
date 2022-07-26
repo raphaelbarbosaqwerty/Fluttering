@@ -14,42 +14,29 @@ class StartPageState extends State<StartPage> {
   final StartStore store = Modular.get();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
       body: RouterOutlet(),
-      bottomNavigationBar: Observer(
-        builder: (_) {
-          return BottomNavigationBar(
-            onTap: (id) {
-              store.currentIndex = id;
-              if (id == 0) {
-                Modular.to.navigate('/start/configuration/1');
-              } else if (id == 1) {
-                Modular.to.navigate('/start/profile/1');
-              } else if (id == 2) {
-                Modular.to.navigate('/start/users');
-              }
-            },
-            currentIndex: store.currentIndex,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Configurations',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person),
-                label: 'Profile',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.group),
-                label: 'Users',
-              ),
-            ],
-          );
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          store.currentIndex++;
+          if (store.currentIndex == 0) {
+            Modular.to.navigate('/start/configuration/1');
+          } else if (store.currentIndex == 1) {
+            Modular.to.navigate('/start/profile/1/');
+          } else if (store.currentIndex == 2) {
+            Modular.to.navigate('/start/users');
+          }
         },
+        child: Icon(Icons.arrow_forward),
       ),
     );
   }
